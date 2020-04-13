@@ -125,12 +125,11 @@ app.delete("/repositories/:id", (request, response) => {
 
 app.post("/repositories/:id/like", (request, response) => {
   const { id } = request.params;
-
-    //procurando pelo índice do repositório
+  //procurando pelo índice do repositório
   // repositório.id tem q ser igual ao id recebido no request.
   const findRepositoryIndex = repositories.findIndex(repository => repository.id === id);
 
-  
+
   /*
    * should not be able to like a repository that does not exist:
    * Para que esse teste passe, você deve validar na sua rota de like se o id do repositório enviado pela url existe ou não.
