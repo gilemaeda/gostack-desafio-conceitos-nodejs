@@ -19,7 +19,6 @@ app.get("/repositories", (request, response) => {
 });
 
 
-
 app.post("/repositories", (request, response) => {
 
     /*
@@ -64,7 +63,7 @@ app.post("/repositories", (request, response) => {
  * do repositório que possua o id IGUAL ao id presente nos parâmetros da rota;
 */
 app.put("/repositories/:id", (request, response) => {
-  
+
   const { title, url, techs } = request.body;
   const { id } = request.params;
 
