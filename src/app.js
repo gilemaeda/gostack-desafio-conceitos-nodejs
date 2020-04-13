@@ -54,6 +54,7 @@ app.post("/repositories", (request, response) => {
 
 });
 
+
 /*
  * PUT /repositories/:id:
  * A rota deve alterar apenas
@@ -63,6 +64,7 @@ app.post("/repositories", (request, response) => {
  * do repositório que possua o id IGUAL ao id presente nos parâmetros da rota;
 */
 app.put("/repositories/:id", (request, response) => {
+  
   const { title, url, techs } = request.body;
   const { id } = request.params;
 
@@ -123,12 +125,13 @@ app.delete("/repositories/:id", (request, response) => {
   return response.status(204).send();
 });
 
+
 app.post("/repositories/:id/like", (request, response) => {
+
   const { id } = request.params;
   //procurando pelo índice do repositório
   // repositório.id tem q ser igual ao id recebido no request.
   const findRepositoryIndex = repositories.findIndex(repository => repository.id === id);
-
 
   /*
    * should not be able to like a repository that does not exist:
